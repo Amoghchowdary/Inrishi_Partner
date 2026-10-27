@@ -50,13 +50,7 @@ function RootComponent() {
     canonical.href = `${window.location.origin}${pathname === "/" ? "/" : pathname}`;
   }, [pathname]);
 
-  const isWorkspaceRoute =
-    pathname === "/partner-login" ||
-    pathname === "/partner-register" ||
-    pathname === "/partner-portal" ||
-    pathname === "/login" ||
-    pathname === "/register" ||
-    pathname === "/portal";
+  const isWorkspaceRoute = pathname === "/login" || pathname === "/register" || pathname === "/portal";
 
   return (
     <QueryClientProvider client={queryClient}>
