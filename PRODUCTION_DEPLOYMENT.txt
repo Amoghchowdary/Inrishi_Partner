@@ -1,14 +1,14 @@
 PARTNER PRODUCTION DEPLOYMENT
 Repository clone: C:\Users\MYPC\Desktop\InRishi\Partner_Delpoyment\Inrishi_Partner
-Source folder: C:\Users\MYPC\Desktop\InRishi\INRISHI_PARTNER_V55
+Source folder: C:\Users\MYPC\Desktop\InRishi\INRISHI_PARTNER_V56
 
 robocopy `
-"C:\Users\MYPC\Desktop\InRishi\INRISHI_PARTNER_V55" `
+"C:\Users\MYPC\Desktop\InRishi\INRISHI_PARTNER_V56" `
 "C:\Users\MYPC\Desktop\InRishi\Partner_Delpoyment\Inrishi_Partner" `
 /MIR /XD ".git" "node_modules" "dist" ".vite" /XF ".env" ".env.local" "*.log"
 
 cd "C:\Users\MYPC\Desktop\InRishi\Partner_Delpoyment\Inrishi_Partner"
 git status
 git add -A
-git commit -m "Deploy INRISHI Partner V55 production"
+git commit -m "Deploy INRISHI Partner V56 production"
 git push -u origin main
