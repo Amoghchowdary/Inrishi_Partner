@@ -1,6 +1,6 @@
 import{getRuntimeConfig,isBackendConfigured}from"@/lib/runtime-config";
 type Role="public"|"partner";type Envelope<T>={source:"INRISHI_APPS_SCRIPT";requestId:string;ok:boolean;data?:T;error?:string;code?:string};
-const KEY="inrishi-v53-partner-session";
+const KEY="inrishi-v54-partner-session";
 export function getSessionToken(r:"partner"){return typeof window==="undefined"?"":sessionStorage.getItem(KEY)||""}
 export function setSessionToken(r:"partner",t:string){if(typeof window!=="undefined"){clearSessionToken(r);sessionStorage.setItem(KEY,t)}}
 export function clearSessionToken(r:"partner"){if(typeof window!=="undefined")sessionStorage.removeItem(KEY)}
