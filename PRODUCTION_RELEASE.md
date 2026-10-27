@@ -1,3 +1,13 @@
-# INRISHI Partner V59 Production Release
+# INRISHI Partner V60 Production Release
 
-V59 removes stale `/partner-*` route declarations from the TypeScript compile graph and retains only `/`, `/login`, `/register`, and `/portal`. Admin actions are removed from the Partner API surface. The same build supports `https://amoghchowdary.github.io/Inrishi_Partner/` and `https://partner.inrishi.in/`.
+V60 preserves the approved Partner design and canonical routes while stabilizing backend communication.
+
+Production corrections:
+- stable Apps Script Web App POST transport restored;
+- only `/`, `/login`, `/register`, `/portal` are production Partner routes;
+- Partner password and Login-ID recovery remains OTP-first;
+- lead creation/conversion and portal snapshots remain server-backed;
+- Main/Admin/Customer frontend code is excluded;
+- V50-V59 path, route, transport and compile regressions remain blocked.
+
+GitHub Actions is the only production build/deployment acceptance environment.

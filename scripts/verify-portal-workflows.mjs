@@ -8,4 +8,4 @@ for(const action of ["partner.portal.snapshot","partner.lead.create"]) if(!servi
 for(const marker of ["How to bring leads","Loading partner workspace","Partner workspace unavailable","Save lead to Inrishi","No leads yet"]) if(!portal.includes(marker)) errors.push(`Partner portal production state missing: ${marker}`);
 if(portal.includes("savePortalStore(next)")) errors.push("Partner lead creation must not rely on local/shared-store optimistic writes.");
 if(errors.length){console.error(errors.map(e=>`ERROR: ${e}`).join("\n"));process.exit(1)}
-console.log("V59 Partner portal workflow verification passed: lead scope, direct snapshot and server-side lead creation are present.");
+console.log("V60 Partner portal workflow verification passed: lead scope, direct snapshot and server-side lead creation are present.");

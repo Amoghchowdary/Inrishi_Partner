@@ -10,4 +10,4 @@ if(login.indexOf("Verify recovery OTP")>login.indexOf("Create new Partner Login 
 const backend="https://script.google.com/macros/s/AKfycbzQ1YMIghWp_p3hy3NxsJraffY_AjLA77JlyfYF7YvkGlylLnV2MiDgJViLjByn9ntq/exec";
 if(!runtime.includes(backend)||!publicConfig.includes(backend)) errors.push("Approved Apps Script backend must remain embedded in Partner runtime layers.");
 if(errors.length){console.error(errors.map(e=>`ERROR: ${e}`).join("\n"));process.exit(1)}
-console.log("V59 partner auth contract passed: login OTP and OTP-first password/Login-ID recovery are locked.");
+console.log("V60 partner auth contract passed: login OTP and OTP-first password/Login-ID recovery are locked.");
