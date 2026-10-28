@@ -637,3 +637,48 @@
 .partner-workspace .workspace-sidebar{border-color:rgba(47,229,167,.2);background:linear-gradient(180deg,rgba(4,24,29,.98),rgba(5,17,27,.98))}
 .partner-workspace .workspace-sidebar button{border-radius:8px}
 .partner-workspace .workspace-content>div:first-child{border-bottom:1px solid rgba(47,229,167,.14);padding-bottom:16px}
+
+/* ==========================================================================
+   V67 — visual-first Partner website for student/early-career partners.
+   White cards remain readable and physically lift on pointer hover.
+   ========================================================================== */
+.partner-site .title-card{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+@media(hover:hover) and (pointer:fine){
+  .partner-site .partner-hover-card:hover,.partner-site .partner-hero-visual:hover{
+    transform:translateY(-7px) scale(1.008);
+    border-color:rgba(53,229,164,.42)!important;
+    box-shadow:0 28px 74px rgba(0,0,0,.34),0 0 0 1px rgba(53,229,164,.08)!important;
+  }
+  .partner-site .partner-hover-card:hover .partner-card-illustration,
+  .partner-site .partner-hover-card:hover .partner-step-illustration,
+  .partner-site .partner-hover-card:hover .partner-service-picture{transform:translateY(-3px) scale(1.03)}
+}
+.partner-hero-visual{position:relative;overflow:hidden;padding:28px;min-height:330px}
+.partner-hero-orbit{position:absolute;right:-22px;top:-22px;display:grid;width:160px;height:160px;place-items:center;border-radius:50%;background:radial-gradient(circle,rgba(53,229,164,.2),rgba(75,176,232,.06) 55%,transparent 70%);color:#087b92}
+.partner-journey-line{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:64px}
+.partner-journey-node{position:relative;display:flex;min-width:0;flex-direction:column;align-items:center;gap:8px;text-align:center;color:#10202a}
+.partner-journey-node>span{display:grid;width:54px;height:54px;place-items:center;border-radius:50%;background:#eef8f5;color:#087a5b;box-shadow:inset 0 0 0 1px rgba(8,122,91,.15)}
+.partner-journey-node>b{font-size:11px}
+.partner-journey-arrow{position:absolute;right:-13px;top:18px;color:#9bb0b9}
+.partner-service-reel-shell{overflow:hidden;border-block:1px solid rgba(101,208,240,.12);background:rgba(1,8,15,.58);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.partner-service-reel{display:flex;width:max-content;gap:10px;padding:12px 0;animation:v67-partner-reel 34s linear infinite}
+.partner-service-reel-shell:hover .partner-service-reel{animation-play-state:paused}
+.partner-service-chip{display:flex;min-width:max-content;align-items:center;gap:9px;border:1px solid rgba(126,221,245,.15);background:rgba(4,17,28,.76);padding:10px 15px;color:rgba(239,249,255,.88);font-size:12px;font-weight:700;text-decoration:none}
+.partner-service-chip svg{color:#35e5a4}
+@keyframes v67-partner-reel{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.partner-card-illustration,.partner-step-illustration,.partner-service-picture{display:grid;place-items:center;transition:transform .22s ease}
+.partner-card-illustration{min-height:120px;margin:-4px -4px 0;border:1px solid rgba(8,122,91,.1);background:radial-gradient(circle,rgba(8,122,91,.12),transparent 62%);color:#087b92}
+.partner-flow-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.partner-flow-card{padding:18px;min-height:285px}
+.partner-step-illustration{position:relative;min-height:150px;margin:-2px -2px 18px;background:linear-gradient(145deg,#f5fbf9,#edf7fb);color:#087b92;border:1px solid rgba(8,122,91,.08)}
+.partner-step-number{position:absolute;left:14px;top:12px;font-family:ui-monospace,monospace;font-size:11px;color:#087a5b}
+.partner-dont-card{display:grid;grid-template-columns:auto auto 1fr;align-items:center;gap:10px;border:1px solid rgba(16,32,42,.09);background:#f6f9f8;padding:16px;color:#3d4e57}
+.partner-dont-card svg{color:#087a5b}.partner-dont-card span{font-family:ui-monospace,monospace;font-size:10px;color:#087a5b}
+.partner-register-visual,.partner-pricing-visual{display:flex;align-items:center;justify-content:center;gap:12px;color:#087b92}.partner-register-visual>svg:nth-child(even){width:22px;color:#087a5b}
+.partner-services-visual{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.partner-service-visual{padding:18px;text-align:center}.partner-service-picture{min-height:120px;margin-bottom:16px;background:radial-gradient(circle,rgba(48,170,212,.13),transparent 60%);color:#087b92}.partner-service-visual p{margin-top:6px;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.partner-incentive-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.partner-incentive-card{padding:18px;text-align:center}.partner-incentive-card>.partner-card-illustration{margin:10px 0;min-height:112px}
+@media(max-width:1050px){.partner-flow-grid,.partner-services-visual,.partner-incentive-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){.partner-journey-line{grid-template-columns:repeat(5,minmax(66px,1fr));overflow-x:auto;padding-bottom:8px}.partner-journey-arrow{display:none}.partner-flow-grid,.partner-services-visual,.partner-incentive-flow{grid-template-columns:1fr 1fr}.partner-flow-card{min-height:245px}.partner-step-illustration{min-height:115px}.partner-register-visual,.partner-pricing-visual{justify-content:flex-start}.partner-service-reel{animation-duration:27s}}
+@media(max-width:480px){.partner-flow-grid,.partner-services-visual,.partner-incentive-flow{grid-template-columns:1fr}.partner-hero-visual{min-height:300px}.partner-journey-line{margin-top:52px}}
+@media(prefers-reduced-motion:reduce){.partner-service-reel{animation:none}.partner-service-reel-shell{overflow-x:auto}}

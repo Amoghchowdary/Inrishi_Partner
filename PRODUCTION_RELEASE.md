@@ -1,10 +1,10 @@
-# INRISHI Partner V66 Production Release
+# INRISHI Partner V67 Production Release
 
-V66 promotes the verified Partner frontend into the coordinated Main + Partner production release while retaining the shared Apps Script V62 backend contract.
+V67 promotes the verified Partner frontend into the coordinated Main + Partner production release while retaining the shared Apps Script V62 backend contract.
 
 Production alignment:
-- Partner frontend release: 66.0.0;
-- Main frontend release: 66.0.0;
+- Partner frontend release: 67.0.0;
+- Main frontend release: 67.0.0;
 - shared Google Apps Script backend contract: 62.0.0;
 - canonical Partner routes and approved design preserved;
 - approval-first Partner provisioning, OTP authentication and recovery preserved;

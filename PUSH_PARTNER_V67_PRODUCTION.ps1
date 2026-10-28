@@ -1,10 +1,10 @@
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
 
-$Source = "C:\Users\MYPC\Desktop\InRishi\INRISHI_PARTNER_V66"
+$Source = "C:\Users\MYPC\Desktop\InRishi\INRISHI_PARTNER_V67"
 $Deploy = "C:\Users\MYPC\Desktop\InRishi\Partner_Delpoyment\Inrishi_Partner"
 $Remote = "https://github.com/Amoghchowdary/Inrishi_Partner.git"
-$ExpectedFrontend = "66.0.0"
+$ExpectedFrontend = "67.0.0"
 $ExpectedBackend = "62.0.0"
 
 function Assert-File([string]$Path) {
@@ -13,7 +13,7 @@ function Assert-File([string]$Path) {
     }
 }
 
-Write-Host "=== INRISHI Partner V66 production handoff ==="
+Write-Host "=== INRISHI Partner V67 production handoff ==="
 Assert-File "$Source\package.json"
 Assert-File "$Source\backend-contract.json"
 Assert-File "$Source\.github\workflows\deploy-pages.yml"
@@ -25,7 +25,7 @@ $sourceWorkflow = Get-Content "$Source\.github\workflows\deploy-pages.yml" -Raw
 
 if ($sourcePkg.version -ne $ExpectedFrontend) { throw "Wrong Partner source: expected $ExpectedFrontend, found $($sourcePkg.version)." }
 if ($sourceContract.version -ne $ExpectedBackend) { throw "Wrong Partner backend contract: expected $ExpectedBackend, found $($sourceContract.version)." }
-if ($sourceWorkflow -notmatch 'Deploy INRISHI Partner V66 Production') { throw "Partner V66 workflow identity missing." }
+if ($sourceWorkflow -notmatch 'Deploy INRISHI Partner V67 Production') { throw "Partner V67 workflow identity missing." }
 if ($sourceWorkflow -notmatch 'Verify deployed Apps Script backend contract') { throw "Generic backend contract gate missing." }
 if ($sourceWorkflow -match 'Verify deployed Apps Script V60 backend|Verify deployed Apps Script V61 backend') { throw "Obsolete hard-coded backend gate detected in Partner source." }
 
@@ -48,9 +48,9 @@ if ($robocopyCode -ge 8) { throw "Robocopy failed for Partner with exit code $ro
 $deployedPkg = Get-Content "$Deploy\package.json" -Raw | ConvertFrom-Json
 $deployedContract = Get-Content "$Deploy\backend-contract.json" -Raw | ConvertFrom-Json
 $deployedWorkflow = Get-Content "$Deploy\.github\workflows\deploy-pages.yml" -Raw
-if ($deployedPkg.version -ne $ExpectedFrontend) { throw "Partner deployment clone is not V66 after Robocopy." }
+if ($deployedPkg.version -ne $ExpectedFrontend) { throw "Partner deployment clone is not V67 after Robocopy." }
 if ($deployedContract.version -ne $ExpectedBackend) { throw "Partner deployment clone backend contract is not V62." }
-if ($deployedWorkflow -notmatch 'Deploy INRISHI Partner V66 Production') { throw "Old Partner workflow remains after Robocopy." }
+if ($deployedWorkflow -notmatch 'Deploy INRISHI Partner V67 Production') { throw "Old Partner workflow remains after Robocopy." }
 
 Write-Host "--- Partner diff before commit ---"
 git status
@@ -63,17 +63,17 @@ if ($LASTEXITCODE -ne 0) { throw "git add failed for Partner." }
 $stagedPkg = (git show :package.json | Out-String) | ConvertFrom-Json
 $stagedContract = (git show :backend-contract.json | Out-String) | ConvertFrom-Json
 $stagedWorkflow = git show :.github/workflows/deploy-pages.yml | Out-String
-if ($stagedPkg.version -ne $ExpectedFrontend) { throw "Staged Partner package is not V66." }
+if ($stagedPkg.version -ne $ExpectedFrontend) { throw "Staged Partner package is not V67." }
 if ($stagedContract.version -ne $ExpectedBackend) { throw "Staged Partner contract is not V62." }
-if ($stagedWorkflow -notmatch 'Deploy INRISHI Partner V66 Production') { throw "Staged Partner workflow is not V66." }
+if ($stagedWorkflow -notmatch 'Deploy INRISHI Partner V67 Production') { throw "Staged Partner workflow is not V67." }
 if ($stagedWorkflow -match 'Verify deployed Apps Script V60 backend|Verify deployed Apps Script V61 backend') { throw "Old Partner backend gate is still staged." }
 
 git diff --cached --quiet
 $stagedDiffCode = $LASTEXITCODE
-if ($stagedDiffCode -eq 0) { throw "No Partner V66 changes are staged. Refusing to claim a production push." }
+if ($stagedDiffCode -eq 0) { throw "No Partner V67 changes are staged. Refusing to claim a production push." }
 if ($stagedDiffCode -ne 1) { throw "Unable to inspect staged Partner changes." }
 
-git commit -m "Deploy INRISHI Partner V66 production"
+git commit -m "Deploy INRISHI Partner V67 production"
 if ($LASTEXITCODE -ne 0) { throw "Partner commit failed." }
 git push origin main
 if ($LASTEXITCODE -ne 0) { throw "Partner push failed." }
@@ -87,9 +87,9 @@ if ($localHead -ne $remoteHead) { throw "Partner push verification failed: local
 $remotePkg = (git show origin/main:package.json | Out-String) | ConvertFrom-Json
 $remoteContract = (git show origin/main:backend-contract.json | Out-String) | ConvertFrom-Json
 $remoteWorkflow = git show origin/main:.github/workflows/deploy-pages.yml | Out-String
-if ($remotePkg.version -ne $ExpectedFrontend) { throw "origin/main Partner package is not V66." }
+if ($remotePkg.version -ne $ExpectedFrontend) { throw "origin/main Partner package is not V67." }
 if ($remoteContract.version -ne $ExpectedBackend) { throw "origin/main Partner contract is not V62." }
-if ($remoteWorkflow -notmatch 'Deploy INRISHI Partner V66 Production') { throw "origin/main Partner workflow is not V66." }
+if ($remoteWorkflow -notmatch 'Deploy INRISHI Partner V67 Production') { throw "origin/main Partner workflow is not V67." }
 if ($remoteWorkflow -match 'Verify deployed Apps Script V60 backend|Verify deployed Apps Script V61 backend') { throw "origin/main still contains an obsolete Partner backend gate." }
 
-Write-Host "SUCCESS: Partner origin/main is V66 and targets Apps Script contract V62. GitHub Actions now owns acceptance/build/deployment."
+Write-Host "SUCCESS: Partner origin/main is V67 and targets Apps Script contract V62. GitHub Actions now owns acceptance/build/deployment."
