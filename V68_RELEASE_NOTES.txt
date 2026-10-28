@@ -1,0 +1,24 @@
+INRISHI PARTNER V68 — PREMIUM CONTENT & STUDENT-FIRST VISUAL RELEASE
+
+Frontend: 68.0.0
+Shared Apps Script backend contract: 62.0.0
+Production domain: https://partner.inrishi.in
+
+V68 improvements:
+- Rewrote the public Partner website for fast understanding by B.Tech students and early-career partners.
+- Replaced documentation-style copy with short actions, business-problem examples and visual checkpoints.
+- Added a clearer five-step journey: Need -> Refer -> Scope -> Deliver -> Incentive.
+- Added Partner-vs-Inrishi responsibility lanes so role boundaries are visually obvious.
+- Services now teach partners what customer statements to listen for before matching the right service.
+- Incentive content now explains four visible checkpoints without implying guaranteed payout.
+- Commercial guidance is simplified to one rule: never quote from memory; use only Inrishi-approved scope, price and timeline.
+- Desktop cards are dark/glass at rest and become white with dark readable text on hover, matching the Main-site interaction.
+- Touch devices remain readable without depending on hover.
+- Replaced DM Sans/Space Grotesk with Manrope/Sora for a stronger premium visual hierarchy.
+- Partner Login, registration, approval, OTP/recovery, portal workflows, incentive logic and Apps Script transport are unchanged.
+
+Deployment model:
+C:\Users\MYPC\Desktop\InRishi\INRISHI_PARTNER_V68
+  -> Robocopy ->
+C:\Users\MYPC\Desktop\InRishi\Partner_Delpoyment\Inrishi_Partner
+  -> git push origin main -> GitHub Actions production acceptance/deployment.

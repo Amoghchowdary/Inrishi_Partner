@@ -1,6 +1,6 @@
 import fs from "node:fs";
 const errors=[];const home=fs.readFileSync("src/components/partner/partner-home.tsx","utf8"),portal=fs.readFileSync("src/components/partner/partner-portal.tsx","utf8"),service=fs.readFileSync("src/services/partner-portal.ts","utf8");
-for(const marker of ["PARTNER SCOPE OF WORK","How a partner brings leads to Inrishi","Find a genuine business requirement","Qualify the opportunity","Add the lead in your Partner Portal","Inrishi confirms scope and commercials","Track delivery and incentive"])if(!home.includes(marker))errors.push(`Partner public scope marker missing: ${marker}`);
+for(const marker of ["YOUR PARTNER PLAYBOOK","What do you actually do?","Start a real conversation","Spot the business problem","Submit the lead","Let Inrishi scope it","Track everything"])if(!home.includes(marker))errors.push(`Partner public scope marker missing: ${marker}`);
 for(const action of ["partner.portal.snapshot","partner.lead.create","partner.recordAdvance","partner.convertLead"])if(!service.includes(`\"${action}\"`))errors.push(`Partner production action missing: ${action}`);
 for(const marker of ["Lead → Customer → Payment → Incentive","eligibleServices","Save lead to Inrishi","Record payment","Convert customer","Eligible incentives","SecureChat","Referral code"])if(!portal.includes(marker))errors.push(`Partner portal workflow missing: ${marker}`);
 if(portal.includes("savePortalStore(next)"))errors.push("Partner lead creation must not rely on optimistic local-store writes.");

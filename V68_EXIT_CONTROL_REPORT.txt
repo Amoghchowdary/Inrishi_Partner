@@ -1,6 +1,6 @@
-INRISHI V67 PARTNER — EXIT CONTROL
+INRISHI V68 PARTNER — EXIT CONTROL
 
-Release: 67.0.0
+Release: 68.0.0
 Backend: Apps Script 62.0.0
 Domain: https://partner.inrishi.in
 

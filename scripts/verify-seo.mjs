@@ -5,5 +5,5 @@ for(const route of ["/login","/register","/portal"])if(!robots.includes(`Disallo
 if(!robots.includes("Sitemap: https://partner.inrishi.in/sitemap.xml"))errors.push("Partner sitemap directive missing.");
 if(!sitemap.includes("https://partner.inrishi.in/"))errors.push("Partner public homepage missing from sitemap.");
 for(const [name,text] of [["login",login],["register",register],["portal",portal]])if(!text.includes("noindex"))errors.push(`Partner private ${name} route lacks noindex.`);
-for(const marker of ["How a partner brings leads to Inrishi","HOW YOUR INCENTIVE WORKS","qualifying customer payment","Eligible","Approved","Paid"])if(!home.includes(marker))errors.push(`Partner public acquisition/SEO copy missing: ${marker}`);
+for(const marker of ["What do you actually do?","HOW INCENTIVE ELIGIBILITY WORKS","qualifying customer payment","eligible, approved or paid"])if(!home.includes(marker))errors.push(`Partner public acquisition/SEO copy missing: ${marker}`);
 if(errors.length){console.error(errors.map(e=>`ERROR: ${e}`).join("\n"));process.exit(1)}console.log("V62 Partner SEO gate passed: public Partner/incentive content is indexable while login/register/portal remain excluded.");
