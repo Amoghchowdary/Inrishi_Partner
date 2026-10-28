@@ -1,6 +1,6 @@
 /* eslint-disable */
 // @ts-nocheck
-// Generated route tree for Inrishi Partner V60 canonical production routes.
+// Generated route tree for Inrishi Partner V62 canonical production routes.
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LoginRouteImport } from './routes/login'

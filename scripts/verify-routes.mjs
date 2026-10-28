@@ -10,4 +10,4 @@ n(register.includes("PartnerRegister"),"/register must directly render registrat
 n(portal.includes("getCurrentPartnerFn")&&portal.includes('redirect({to:"/login"})'),"/portal must be partner-auth protected.");
 n(workflow.includes("partner.inrishi.in"),"Partner Pages workflow must default to partner.inrishi.in.");
 n(!fs.existsSync("src/services/admin-auth.ts")&&!fs.existsSync("src/routes/r.9f2a7c4d6e.tsx"),"Admin source must not ship in partner deployment.");
-if(e.length){console.error(e.map(x=>`ERROR: ${x}`).join("\n"));process.exit(1)}console.log("V60 partner route contract passed: canonical Partner routes and safe CTAs verified.");
+if(e.length){console.error(e.map(x=>`ERROR: ${x}`).join("\n"));process.exit(1)}console.log("V62 partner route contract passed: canonical Partner routes and safe CTAs verified.");

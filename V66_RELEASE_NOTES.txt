@@ -1,0 +1,17 @@
+INRISHI PARTNER V66 — INTEGRATION RELEASE
+
+Frontend release: 66.0.0
+Backend deployment contract: Apps Script 62.0.0 (unchanged intentionally)
+
+Corrections:
+- Upgrades the Partner Git-ready frontend from the supplied V62 source to V66 release identity.
+- Keeps Partner pointed to the same Apps Script V62 deployment used by Main.
+- Adds a V66 cross-system integration gate against Main and Apps Script contract snapshots.
+- Preserves approval-first Partner authentication, OTP, lead conversion, service eligibility, incentive and encrypted-chat workflows.
+- Preserves all existing fail-fast exit controls and GitHub Pages smoke testing.
+
+V66 deployment-handoff correction:
+- Restores the persistent-clone sequence agreed in the INRISHI Website chat: fetch origin -> hard reset origin/main -> Robocopy -> staged verification -> commit -> push -> remote verification.
+- Partner persistent clone remains C:\Users\MYPC\Desktop\InRishi\Partner_Delpoyment\Inrishi_Partner.
+- Version source contains no .git metadata.
+- The push script refuses to proceed if an old V60/V61 hard-coded backend workflow remains.

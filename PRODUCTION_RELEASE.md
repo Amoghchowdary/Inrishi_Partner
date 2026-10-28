@@ -1,13 +1,14 @@
-# INRISHI Partner V60 Production Release
+# INRISHI Partner V66 Production Release
 
-V60 preserves the approved Partner design and canonical routes while stabilizing backend communication.
+V66 promotes the verified Partner frontend into the coordinated Main + Partner production release while retaining the shared Apps Script V62 backend contract.
 
-Production corrections:
-- stable Apps Script Web App POST transport restored;
-- only `/`, `/login`, `/register`, `/portal` are production Partner routes;
-- Partner password and Login-ID recovery remains OTP-first;
-- lead creation/conversion and portal snapshots remain server-backed;
-- Main/Admin/Customer frontend code is excluded;
-- V50-V59 path, route, transport and compile regressions remain blocked.
+Production alignment:
+- Partner frontend release: 66.0.0;
+- Main frontend release: 66.0.0;
+- shared Google Apps Script backend contract: 62.0.0;
+- canonical Partner routes and approved design preserved;
+- approval-first Partner provisioning, OTP authentication and recovery preserved;
+- lead conversion, service eligibility, payment/incentive tracking and encrypted chat preserved;
+- GitHub Pages route recovery and post-deploy smoke testing remain enforced.
 
-GitHub Actions is the only production build/deployment acceptance environment.
+The frontend version is intentionally independent from the Apps Script backend version. No database reset or Admin credential reset is part of this release.

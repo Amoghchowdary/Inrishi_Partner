@@ -1,34 +1,11 @@
-import { appsScriptCall, clearSessionToken, getSessionToken, setSessionToken } from "@/lib/apps-script-api";
-
+import { appsScriptCall,clearSessionToken,getSessionToken,setSessionToken } from "@/lib/apps-script-api";
 type Session={loginId:string;email:string;name?:string;partnerId?:string};
 export type PartnerRecoveryKind="password"|"loginId";
-
-export const beginPartnerPasswordLoginFn=({data}:{data:{identifier:string;password:string}})=>
-  appsScriptCall<{ok:boolean;message?:string;loginId:string;partnerName:string;partnerStatus:string;maskedRecoveryEmail:string}>("auth.partner.begin",data,{role:"public"});
-
-export async function verifyPartnerLoginOtpFn({data}:{data:{identifier:string;otp:string}}){
-  const r=await appsScriptCall<{ok:boolean;message?:string;token?:string;partnerStatus?:string;loginId?:string}>("auth.partner.verifyOtp",data,{role:"public"});
-  if(r.ok&&r.token)setSessionToken("partner",r.token);
-  return r;
-}
-
-export const requestPartnerRecoveryOtpFn=({data}:{data:{recoveryEmail:string;kind:PartnerRecoveryKind}})=>
-  appsScriptCall<{ok:boolean;message?:string;maskedRecoveryEmail:string;kind:PartnerRecoveryKind}>("auth.partner.recovery.request",data,{role:"public"});
-
-export const verifyPartnerRecoveryOtpFn=({data}:{data:{recoveryEmail:string;kind:PartnerRecoveryKind;otp:string}})=>
-  appsScriptCall<{ok:boolean;message?:string;recoveryToken?:string;kind:PartnerRecoveryKind}>("auth.partner.recovery.verify",data,{role:"public"});
-
-export const completePartnerRecoveryFn=({data}:{data:{recoveryToken:string;kind:PartnerRecoveryKind;newPassword?:string;newLoginId?:string}})=>
-  appsScriptCall<{ok:boolean;message?:string;loginId?:string}>("auth.partner.recovery.complete",data,{role:"public"});
-
-export async function getCurrentPartnerFn(){
-  if(!getSessionToken("partner"))return null;
-  try{return await appsScriptCall<Session|null>("auth.partner.session",{},{role:"partner"})}
-  catch{clearSessionToken("partner");return null}
-}
-
-export async function logoutPartnerFn(){
-  try{await appsScriptCall("auth.logout",{role:"partner"},{role:"partner"})}catch{}
-  clearSessionToken("partner");
-  return{ok:true as const};
-}
+export const beginPartnerPasswordLoginFn=({data}:{data:{identifier:string;password:string}})=>appsScriptCall<{ok:boolean;message?:string;loginId:string;partnerName:string;partnerStatus:string;maskedRecoveryEmail:string;mustChangePassword?:boolean}>("auth.partner.begin",data,{role:"public"});
+export async function verifyPartnerLoginOtpFn({data}:{data:{identifier:string;otp:string}}){const r=await appsScriptCall<{ok:boolean;message?:string;token?:string;partnerStatus?:string;loginId?:string;mustChangePassword?:boolean}>("auth.partner.verifyOtp",data,{role:"public"});if(r.ok&&r.token)setSessionToken("partner",r.token);return r}
+export const requestPartnerRecoveryOtpFn=({data}:{data:{recoveryEmail:string;kind:PartnerRecoveryKind}})=>appsScriptCall<{ok:boolean;message?:string;maskedRecoveryEmail:string;kind:PartnerRecoveryKind}>("auth.partner.recovery.request",data,{role:"public"});
+export const verifyPartnerRecoveryOtpFn=({data}:{data:{recoveryEmail:string;kind:PartnerRecoveryKind;otp:string}})=>appsScriptCall<{ok:boolean;message?:string;recoveryToken?:string;kind:PartnerRecoveryKind}>("auth.partner.recovery.verify",data,{role:"public"});
+export const completePartnerRecoveryFn=({data}:{data:{recoveryToken:string;kind:PartnerRecoveryKind;newPassword?:string;newLoginId?:string}})=>appsScriptCall<{ok:boolean;message?:string;loginId?:string}>("auth.partner.recovery.complete",data,{role:"public"});
+export async function changePartnerPasswordFn(data:{currentPassword:string;newPassword:string}){const r=await appsScriptCall<{ok:boolean;message?:string}>("auth.partner.changePassword",data,{role:"partner"});if(r.ok)clearSessionToken("partner");return r}
+export async function getCurrentPartnerFn(){if(!getSessionToken("partner"))return null;try{return await appsScriptCall<Session|null>("auth.partner.session",{},{role:"partner"})}catch{clearSessionToken("partner");return null}}
+export async function logoutPartnerFn(){try{await appsScriptCall("auth.logout",{role:"partner"},{role:"partner"})}catch{}clearSessionToken("partner");return{ok:true as const}}

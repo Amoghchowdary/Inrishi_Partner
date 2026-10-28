@@ -7,4 +7,4 @@ for(const forbidden of ["src/routes/partner.tsx","src/routes/partner-login.tsx",
 for(const component of ["src/components/partner/partner-home.tsx","src/components/partner/partner-login.tsx","src/components/partner/partner-register.tsx","src/components/partner/partner-portal.tsx"])if(!fs.existsSync(component))errors.push(`Partner component missing: ${component}`);
 const api=fs.readFileSync("src/lib/business-api.ts","utf8");if(/role:"admin"|admin\.inquiries/.test(api))errors.push("Partner bundle still contains Admin API actions.");
 if(errors.length){console.error(errors.map(e=>`ERROR: ${e}`).join("\n"));process.exit(1)}
-console.log("V60 partner architecture passed: canonical routes are isolated from legacy/Main/Admin route sources.");
+console.log("V62 partner architecture passed: canonical routes are isolated from legacy/Main/Admin route sources.");
