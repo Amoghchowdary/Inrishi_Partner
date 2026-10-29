@@ -1,7 +1,0 @@
-INRISHI V68 PARTNER — EXIT CONTROL
-
-Release: 68.0.0
-Backend: Apps Script 62.0.0
-Domain: https://partner.inrishi.in
-
-No database reset. No backend downgrade. No exit-control bypass.

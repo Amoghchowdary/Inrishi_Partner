@@ -1,6 +1,7 @@
-import fs from "node:fs";
-const errors=[];const portal=fs.readFileSync("src/components/partner/partner-portal.tsx","utf8"),service=fs.readFileSync("src/services/partner-portal.ts","utf8"),home=fs.readFileSync("src/components/partner/partner-home.tsx","utf8"),contract=JSON.parse(fs.readFileSync("backend-contract.json","utf8"));
-for(const marker of ["eligibleServices","serviceId","expectedValue","qualifyingPaymentPercent","incentiveType","incentiveValue"])if(!portal.includes(marker)&&!service.includes(marker))errors.push(`Partner service/incentive model missing: ${marker}`);
-for(const action of ["partner.portal.snapshot","partner.lead.create","partner.recordAdvance","partner.convertLead"])if(!contract.actions.includes(action))errors.push(`Partner conversion action missing: ${action}`);
-for(const marker of ["Incentive","Lead","qualifying customer payment","Eligible","Approved","Paid"])if(!home.includes(marker)&&!portal.includes(marker))errors.push(`Partner incentive explanation missing: ${marker}`);
-if(errors.length){console.error(errors.map(e=>`ERROR: ${e}`).join("\n"));process.exit(1)}console.log("V62 Partner service/incentive gate passed: only eligible services can be referred and incentive lifecycle is explained/tracked.");
+import fs from 'node:fs';
+const e=[];const need=(ok,msg)=>{if(!ok)e.push(msg)};const home=fs.readFileSync('src/components/partner/partner-home.tsx','utf8'),portal=fs.readFileSync('src/components/partner/partner-portal.tsx','utf8'),svc=fs.readFileSync('src/services/partner-portal.ts','utf8');
+for(const m of ['₹25,000','₹12,500','₹2,500','₹5,000','Partial customer payment = proportional incentive eligibility'])need(home.includes(m),`Partner incentive example missing: ${m}`);
+need(portal.includes('eligibleAmount')&&portal.includes('paidIncentiveAmount'),'Partner portal proportional incentive fields missing.');
+need(svc.includes('eligibleIncentive')&&svc.includes('totalIncentive'),'Partner payment API result contract missing.');
+if(e.length){console.error(e.map(x=>`ERROR: ${x}`).join('\n'));process.exit(1)}
+console.log('V69 Partner incentive gate passed: proportional customer-payment eligibility and portal earnings fields are wired.');

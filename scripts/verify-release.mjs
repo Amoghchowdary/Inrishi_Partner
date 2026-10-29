@@ -7,15 +7,15 @@ const tree=fs.readFileSync("src/routeTree.gen.ts","utf8");
 const api=fs.readFileSync("src/lib/apps-script-api.ts","utf8");
 const login=fs.readFileSync("src/components/partner/partner-login.tsx","utf8");
 const contract=JSON.parse(fs.readFileSync("backend-contract.json","utf8"));
-need(pkg.version==="68.0.0","Version mismatch");
+need(pkg.version==="69.0.0","Version mismatch");
 need(cfg.includes('SITE_ID: "partner"'),"Partner site identity missing");
 need(cfg.includes("https://script.google.com/macros/s/AKfycbzQ1YMIghWp_p3hy3NxsJraffY_AjLA77JlyfYF7YvkGlylLnV2MiDgJViLjByn9ntq/exec"),"Backend URL missing");
 need(workflow.includes("Verify deployed Apps Script backend contract")&&workflow.includes("verify-backend-health.mjs"),"Live backend health gate missing");
 need(workflow.includes("partner.inrishi.in"),"Partner Pages domain missing");
-need(contract.version==="62.0.0"&&contract.transport==="apps-script-form-post","V62 backend action contract missing");
+need(contract.version==="63.0.0"&&contract.transport==="apps-script-form-post","V62 backend action contract missing");
 need(api.includes('form.method="POST"')&&api.includes("form.submit()")&&!api.includes("ensureRpcBridge"),"V62 stable form-post transport not locked");
 need(login.includes("Forgot password?")&&login.includes("Forgot Login ID?")&&login.includes("Verify recovery OTP"),"Partner OTP-first recovery missing");
 need(fs.existsSync("dist/index.html"),"dist missing");
 need(tree.includes("'/portal'")&&!tree.includes("'/admin'"),"Partner/Admin route boundary failed");
 if(errors.length){console.error(errors.map(x=>`ERROR: ${x}`).join("\n"));process.exit(1)}
-console.log("V68 Partner final production release gate passed: live backend, stable transport and Partner recovery are verified.");
+console.log("V69 Partner final production release gate passed: live backend, stable transport and Partner recovery are verified.");

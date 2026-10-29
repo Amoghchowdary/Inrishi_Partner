@@ -13,7 +13,7 @@ function isTrustedAppsScriptOrigin(origin:string){
 }
 
 type Role="public"|"partner";
-const KEYS={partner:"inrishi-v62-partner-session"} as const;
+const KEYS={partner:"inrishi-v63-partner-session"} as const;
 function currentRole():Role{return typeof window==="undefined"?"public":location.pathname.includes("/portal")?"partner":"public";}
 export function getSessionToken(r:Exclude<Role,"public">){return typeof window==="undefined"?"":sessionStorage.getItem(KEYS[r])||""}
 export function setSessionToken(r:Exclude<Role,"public">,t:string){if(typeof window!=="undefined"){clearSessionToken(r);sessionStorage.setItem(KEYS[r],t)}}

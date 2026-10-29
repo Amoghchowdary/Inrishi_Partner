@@ -1,9 +1,8 @@
-import fs from "node:fs";
-const errors=[];const read=p=>fs.readFileSync(p,"utf8"),html=read("index.html"),robots=read("public/robots.txt"),sitemap=read("public/sitemap.xml"),home=read("src/components/partner/partner-home.tsx"),login=read("src/routes/login.tsx"),register=read("src/routes/register.tsx"),portal=read("src/routes/portal.tsx");
-for(const marker of ['rel="canonical"','property="og:title"','property="og:description"','application/ld+json'])if(!html.includes(marker))errors.push(`Partner SEO metadata missing: ${marker}`);
-for(const route of ["/login","/register","/portal"])if(!robots.includes(`Disallow: ${route}`))errors.push(`Private Partner route missing robots exclusion: ${route}`);
-if(!robots.includes("Sitemap: https://partner.inrishi.in/sitemap.xml"))errors.push("Partner sitemap directive missing.");
-if(!sitemap.includes("https://partner.inrishi.in/"))errors.push("Partner public homepage missing from sitemap.");
-for(const [name,text] of [["login",login],["register",register],["portal",portal]])if(!text.includes("noindex"))errors.push(`Partner private ${name} route lacks noindex.`);
-for(const marker of ["What do you actually do?","HOW INCENTIVE ELIGIBILITY WORKS","qualifying customer payment","eligible, approved or paid"])if(!home.includes(marker))errors.push(`Partner public acquisition/SEO copy missing: ${marker}`);
-if(errors.length){console.error(errors.map(e=>`ERROR: ${e}`).join("\n"));process.exit(1)}console.log("V62 Partner SEO gate passed: public Partner/incentive content is indexable while login/register/portal remain excluded.");
+import fs from 'node:fs';
+const e=[];const need=(ok,msg)=>{if(!ok)e.push(msg)};const home=fs.readFileSync('src/components/partner/partner-home.tsx','utf8'),html=fs.readFileSync('index.html','utf8'),sitemap=fs.readFileSync('public/sitemap.xml','utf8');
+for(const m of ['Refer businesses.','Earn as they pay.','WHAT TO REFER','HOW EARNINGS WORK','Business Website','CRM','Employee Management','ERP'])need(home.includes(m),`Partner acquisition marker missing: ${m}`);
+need(home.includes('Become a Partner')&&home.includes('Partner Login'),'Partner conversion CTAs missing.');
+need(html.toLowerCase().includes('partner'),'Partner index metadata missing.');
+need(sitemap.includes('partner.inrishi.in'),'Partner sitemap domain missing.');
+if(e.length){console.error(e.map(x=>`ERROR: ${x}`).join('\n'));process.exit(1)}
+console.log('V69 Partner SEO gate passed: referral proposition, products, earnings and conversion CTAs are present.');

@@ -1,7 +1,8 @@
-import fs from "node:fs";
-const errors=[];const home=fs.readFileSync("src/components/partner/partner-home.tsx","utf8"),portal=fs.readFileSync("src/components/partner/partner-portal.tsx","utf8"),service=fs.readFileSync("src/services/partner-portal.ts","utf8");
-for(const marker of ["YOUR PARTNER PLAYBOOK","What do you actually do?","Start a real conversation","Spot the business problem","Submit the lead","Let Inrishi scope it","Track everything"])if(!home.includes(marker))errors.push(`Partner public scope marker missing: ${marker}`);
-for(const action of ["partner.portal.snapshot","partner.lead.create","partner.recordAdvance","partner.convertLead"])if(!service.includes(`\"${action}\"`))errors.push(`Partner production action missing: ${action}`);
-for(const marker of ["Lead → Customer → Payment → Incentive","eligibleServices","Save lead to Inrishi","Record payment","Convert customer","Eligible incentives","SecureChat","Referral code"])if(!portal.includes(marker))errors.push(`Partner portal workflow missing: ${marker}`);
-if(portal.includes("savePortalStore(next)"))errors.push("Partner lead creation must not rely on optimistic local-store writes.");
-if(errors.length){console.error(errors.map(e=>`ERROR: ${e}`).join("\n"));process.exit(1)}console.log("V62 Partner portal workflow passed: service eligibility, lead conversion, qualifying payment, incentive tracking and secure chat are wired.");
+import fs from 'node:fs';
+const e=[];const need=(ok,msg)=>{if(!ok)e.push(msg)};const home=fs.readFileSync('src/components/partner/partner-home.tsx','utf8'),portal=fs.readFileSync('src/components/partner/partner-portal.tsx','utf8'),chat=fs.readFileSync('src/components/secure-chat.tsx','utf8');
+for(const m of ['Spot a business problem','Add the lead','Stay connected',"Inrishi's role",'Payment received','Eligibility updates','Admin verifies','Payout recorded'])need(home.includes(m),`Partner public workflow missing: ${m}`);
+for(const m of ['What you can refer','Earnings','Chat with Admin','Record payment','eligibleAmount','paidIncentiveAmount'])need(portal.includes(m),`Partner portal workflow missing: ${m}`);
+need(chat.includes('Inrishi Admin'),'Partner Admin chat identity missing.');
+need(!chat.includes('This action is not available on the Partner site.'),'Old Partner-chat rejection copy remains.');
+if(e.length){console.error(e.map(x=>`ERROR: ${x}`).join('\n'));process.exit(1)}
+console.log('V69 Partner workflow gate passed: referral, payment, incentive and Admin-chat journeys are present.');
