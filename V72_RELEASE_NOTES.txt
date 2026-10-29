@@ -1,4 +1,4 @@
-INRISHI PARTNER V71
+INRISHI PARTNER V72
 
 - Adds hero product artwork.
 - Adds screenshot-style CRM, ERP, Employee Management and Website visuals.

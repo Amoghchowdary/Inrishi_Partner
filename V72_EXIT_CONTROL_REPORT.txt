@@ -1,12 +1,12 @@
-INRISHI PARTNER V71 — EXIT CONTROL REPORT
+INRISHI PARTNER V72 — EXIT CONTROL REPORT
 
-Frontend: 71.0.0
+Frontend: 72.0.0
 Backend contract: 63.0.0
 Critical production files: present
 PS1 deployment files: none
 .git directories: none
 Source-level gates: PASSED
-V71 visual-content gate: PASSED
+V72 visual-content gate: PASSED
 - Partner hero product artwork present
 - CRM/ERP/EMS/Website screenshot-style visuals present
 - Visual referral-to-incentive journey present

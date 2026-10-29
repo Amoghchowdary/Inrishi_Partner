@@ -1,7 +1,7 @@
-INRISHI PARTNER V71 — PRODUCTION DEPLOYMENT
+INRISHI PARTNER V72 — PRODUCTION DEPLOYMENT
 
 Source folder:
-C:\Users\MYPC\Desktop\InRishi\INRISHI_PARTNER_V71
+C:\Users\MYPC\Desktop\InRishi\INRISHI_PARTNER_V72
 
 Persistent Git clone:
 C:\Users\MYPC\Desktop\InRishi\Partner_Delpoyment\Inrishi_Partner
@@ -9,8 +9,8 @@ C:\Users\MYPC\Desktop\InRishi\Partner_Delpoyment\Inrishi_Partner
 Deployment model:
 1. Verify free disk space and critical source files.
 2. git fetch origin + git reset --hard origin/main in the persistent clone.
-3. Robocopy the V71 source into the persistent clone, excluding .git/node_modules/dist/.vite/.env files.
-4. Verify frontend 71.0.0 and backend contract 63.0.0.
+3. Robocopy the V72 source into the persistent clone, excluding .git/node_modules/dist/.vite/.env files.
+4. Verify frontend 72.0.0 and backend contract 63.0.0.
 5. git add -A, verify staged tree, commit, push main.
 6. Fetch origin again and confirm origin/main matches local HEAD.
 
