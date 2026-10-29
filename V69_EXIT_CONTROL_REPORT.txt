@@ -1,9 +1,0 @@
-INRISHI PARTNER V69 — EXIT CONTROL
-Frontend: 69.0.0
-Backend contract: 63.0.0
-Contract actions: 72
-Domain: https://partner.inrishi.in
-Partner Admin chat: REQUIRED by V63
-Proportional incentive fields: REQUIRED by V63
-Legal acceptance: REQUIRED by V63
-No PS1 deployment wrapper included.

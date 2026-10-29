@@ -1,0 +1,8 @@
+INRISHI PARTNER V71
+
+- Adds hero product artwork.
+- Adds screenshot-style CRM, ERP, Employee Management and Website visuals.
+- Adds a visual 5-step referral-to-incentive journey.
+- Preserves the Partner Portal, incentives and Admin chat behavior.
+- Keeps Apps Script backend contract at V63 / 63.0.0.
+- No PS1 deployment files.

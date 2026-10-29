@@ -1,8 +1,0 @@
-INRISHI PARTNER V69 — CONTENT / READABILITY
-
-Audience: students, early-career professionals, business owners and referral partners.
-Language: simple, short and action-first.
-Journey: Find a business need → Add lead → Inrishi demos/scopes/quotes/builds → Record customer payments → See eligible incentive → Admin verifies/pays.
-Navigation: How it works / What to refer / Earnings / Partner Portal / Rules / Login / Become a Partner.
-Typography: Plus Jakarta Sans + Sora.
-Visual learning: real workflow mockups and payment/incentive example rather than generic explanations.

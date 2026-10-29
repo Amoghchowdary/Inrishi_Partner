@@ -1,0 +1,14 @@
+INRISHI PARTNER V71 — EXIT CONTROL REPORT
+
+Frontend: 71.0.0
+Backend contract: 63.0.0
+Critical production files: present
+PS1 deployment files: none
+.git directories: none
+Source-level gates: PASSED
+V71 visual-content gate: PASSED
+- Partner hero product artwork present
+- CRM/ERP/EMS/Website screenshot-style visuals present
+- Visual referral-to-incentive journey present
+Integration gate: PASSED (Apps Script V63, 72 actions)
+TypeScript build: delegated to GitHub Actions because npm dependency installation timed out in build environment before vite/client types were available.

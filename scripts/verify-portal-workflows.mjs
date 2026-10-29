@@ -5,4 +5,4 @@ for(const m of ['What you can refer','Earnings','Chat with Admin','Record paymen
 need(chat.includes('Inrishi Admin'),'Partner Admin chat identity missing.');
 need(!chat.includes('This action is not available on the Partner site.'),'Old Partner-chat rejection copy remains.');
 if(e.length){console.error(e.map(x=>`ERROR: ${x}`).join('\n'));process.exit(1)}
-console.log('V69 Partner workflow gate passed: referral, payment, incentive and Admin-chat journeys are present.');
+console.log('V71 Partner workflow gate passed: referral, payment, incentive and Admin-chat journeys are present.');
