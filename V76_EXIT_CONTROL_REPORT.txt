@@ -1,0 +1,6 @@
+INRISHI PARTNER V76 — EXIT CONTROL
+Frontend 76.0.0 | Backend 63.0.0
+PASS: config, dependencies policy, CSS, design, typing guards, architecture, Pages paths, navigation, route recovery, backend transport, runtime exports, auth, portal workflows, permissions, incentives, chat, SEO, 72-action contract, V76 storytelling, V76 integration, historical regression, production boundary, UI, TS/TSX syntax.
+Required V76 design gates: no “How it works”; image-led public content; white/black tile hover; public commercial terms private; ERP absent publicly/new referrals.
+
+GTM EXIT CONTROL: Partner must contain GTM-NH8FPTZF exactly once and must not contain GTM-WSCMN3T2.
