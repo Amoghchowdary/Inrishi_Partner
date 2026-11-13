@@ -1,9 +1,9 @@
-# INRISHI Partner Production — V72
+# INRISHI Partner Production — V73
 
 Production Partner frontend for `https://partner.inrishi.in`.
 
 - GitHub repository: `Amoghchowdary/Inrishi_Partner`
-- Partner frontend release: `72.0.0`
+- Partner frontend release: `73.0.0`
 - Shared Apps Script backend contract: `62.0.0`
 - Canonical routes: `/`, `/login`, `/register`, `/portal`
 - Uses the same 72-action Apps Script contract and deployment endpoint as INRISHI Main.

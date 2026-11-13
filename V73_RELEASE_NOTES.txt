@@ -1,0 +1,10 @@
+INRISHI PARTNER V73 — STORYTELLING PARTNER RELEASE
+
+Frontend: 73.0.0
+Backend contract: 63.0.0
+
+- White-only public typography.
+- ERP removed from public referral choices and new Partner lead selection.
+- Public incentive percentages/commission terms are not disclosed; private portal remains source of truth.
+- Visual Partner story and richer product mockups added.
+- High-finish dark-glass hover system and private portal preview.

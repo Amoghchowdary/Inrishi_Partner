@@ -1,11 +1,10 @@
 import fs from 'node:fs';
 const e=[];const need=(ok,msg)=>{if(!ok)e.push(msg)};
-const home=fs.readFileSync('src/components/partner/partner-home.tsx','utf8');
-const css=fs.readFileSync('src/styles.css','utf8');
-for(const m of ['Refer businesses.','Earn as they pay.','Find the need.','Make the connection.','WHAT TO REFER','HOW EARNINGS WORK','ONE PARTNER PORTAL','Chat with Inrishi Admin'])need(home.includes(m),`Partner V72 marker missing: ${m}`);
-for(const m of ['.v69-hover-card','.v69-partner-hero','.v69-partner-nav','.v69-chat-preview'])need(css.includes(m),`Partner visual system missing: ${m}`);
-need(css.includes('.v69-hover-card:hover'),'White hover-card interaction missing.');
+const home=fs.readFileSync('src/components/partner/partner-home.tsx','utf8'),css=fs.readFileSync('src/styles.css','utf8');
+for(const m of ['Spot the business problem.','Make the introduction','WHAT TO REFER','SEE WHAT YOU ARE REFERRING','YOUR PRIVATE PARTNER PORTAL','Chat with Admin'])need(home.includes(m),`Partner V73 marker missing: ${m}`);
+for(const m of ['.v73-hover-card','.v73-partner-hero','.v73-partner-story','.v73-portal-frame'])need(css.includes(m),`Partner visual system missing: ${m}`);
+need(css.includes('.v73-hover-card:hover'),'Partner hover interaction missing.');
 need(css.includes('Plus Jakarta Sans')&&css.includes('Sora'),'Premium typography tokens missing.');
-need(!home.includes('WEBSITE REFERRAL EXAMPLE')&&!home.includes('₹5,000 total incentive'),'Public website referral incentive example must remain removed in V72.');
+need(!home.includes('₹5,000 total incentive')&&!home.includes('name:"ERP"'),'Removed Partner public content returned.');
 if(e.length){console.error(e.map(x=>`ERROR: ${x}`).join('\n'));process.exit(1)}
-console.log('V72 Partner design gate passed: public ₹5,000 referral example removed; visual journey and portal preview remain locked.');
+console.log('V73 Partner design gate passed: story, visual product guidance, private commercial positioning and hover system are locked.');
