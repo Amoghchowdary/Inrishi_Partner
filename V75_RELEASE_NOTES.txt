@@ -1,5 +1,5 @@
-INRISHI PARTNER V74 — VISUAL & NAVIGATION REFINEMENT
-Frontend: 74.0.0
+INRISHI PARTNER V75 — VISUAL & NAVIGATION REFINEMENT
+Frontend: 75.0.0
 Backend contract: Apps Script 63.0.0 (unchanged)
 
 Changes:
@@ -11,3 +11,10 @@ Changes:
 - Public commercial/incentive terms remain private inside the authenticated Partner Portal.
 - ERP remains blocked from new Partner referral choices.
 - Backend remains Apps Script V63.
+
+V75 realistic-image upgrade:
+- adds real business photography;
+- adds photoreal software scenes;
+- replaces icon-only Partner support cards with realistic visual explanations;
+- keeps public product set Website, CRM, Employee Management, AI Automation;
+- backend remains Apps Script V63.
