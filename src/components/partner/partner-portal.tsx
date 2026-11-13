@@ -12,7 +12,7 @@ import { siteHref } from "@/lib/site-path";
 
 type Tab="dashboard"|"guide"|"services"|"leads"|"customers"|"projects"|"incentives"|"chat"|"security";
 const tabs:[Tab,string,typeof LayoutDashboard][]=[
-  ["dashboard","Dashboard",LayoutDashboard],["guide","How it works",Handshake],["services","What you can refer",BriefcaseBusiness],["leads","Leads",UsersRound],["customers","Customers",UsersRound],["projects","Projects",Workflow],["incentives","Earnings",WalletCards],["chat","Chat with Admin",MessageCircleMore],["security","Security",ShieldCheck],
+  ["dashboard","Dashboard",LayoutDashboard],["guide","Partner Guide",Handshake],["services","What you can refer",BriefcaseBusiness],["leads","Leads",UsersRound],["customers","Customers",UsersRound],["projects","Projects",Workflow],["incentives","Earnings",WalletCards],["chat","Chat with Admin",MessageCircleMore],["security","Security",ShieldCheck],
 ];
 const emptyLead:PartnerLeadInput={customerName:"",company:"",phone:"",email:"",location:"",notes:"",source:"Partner referral",followUpDate:"",serviceId:"",expectedValue:0};
 const priceHint:Record<string,string>={"Website Design":"₹25,000 + GST","CRM":"From ₹15,000 + GST","Employee Management":"From ₹15,000 + GST","AI Business Transformation":"Custom quotation","Books Customization":"Custom quotation","Custom Software":"Custom quotation","SaaS Products":"Custom quotation"};

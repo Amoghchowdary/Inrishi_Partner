@@ -1,11 +1,6 @@
-# INRISHI Partner Production — V73
+# INRISHI Partner V74
+Production frontend for https://partner.inrishi.in.
 
-Production Partner frontend for `https://partner.inrishi.in`.
-
-- GitHub repository: `Amoghchowdary/Inrishi_Partner`
-- Partner frontend release: `73.0.0`
-- Shared Apps Script backend contract: `62.0.0`
-- Canonical routes: `/`, `/login`, `/register`, `/portal`
-- Uses the same 72-action Apps Script contract and deployment endpoint as INRISHI Main.
-- Partner authentication, OTP/recovery, lead conversion, service eligibility, qualifying payments, incentives and encrypted chat are preserved.
-- GitHub Actions performs live backend-contract verification, production acceptance checks, Pages deployment and post-deploy smoke testing.
+V74 removes “How it works”, simplifies the Partner proposition, adds image-led product guidance, and applies white-card/black-text hover only to tiles and slide/reel elements.
+Commercial/incentive details remain inside the authenticated Partner Portal. Backend remains Apps Script V63 / contract 63.0.0.
+Deployment remains direct Robocopy into the persistent Git clone followed by Git push; no PS1 deployment files are included.

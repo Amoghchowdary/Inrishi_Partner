@@ -1,0 +1,13 @@
+INRISHI PARTNER V74 — VISUAL & NAVIGATION REFINEMENT
+Frontend: 74.0.0
+Backend contract: Apps Script 63.0.0 (unchanged)
+
+Changes:
+- Removed “How it works” from Partner public navigation and renamed the portal tab to “Partner Guide”.
+- Shortened hero headline to “Refer the problem. We build the solution.”
+- Added illustrated Partner Network visual and product images for Website, CRM, Employee Management and AI Automation.
+- Referral tiles now include visual product content rather than icons alone.
+- Tiles and reel/slide placeholders turn white with black text on pointer hover/focus only.
+- Public commercial/incentive terms remain private inside the authenticated Partner Portal.
+- ERP remains blocked from new Partner referral choices.
+- Backend remains Apps Script V63.
