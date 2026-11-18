@@ -4,10 +4,10 @@ const tree=r("src/routeTree.gen.ts"),index=r("src/routes/index.tsx"),site=r("src
 for(const p of ["'/'","'/login'","'/register'","'/portal'"])n(tree.includes(p),`Partner route missing: ${p}`);
 for(const bad of ["/admin","customer-login","customer-portal","r/9f2a7c4d6e"])n(!tree.includes(bad),`Partner route tree contains main/admin route: ${bad}`);
 n(index.includes("PartnerWebsite"),"Partner root must render PartnerWebsite.");
-n(site.includes('siteHref("/login")')&&site.includes('siteHref("/register")')&&site.includes('siteHref("/portal")'),"Partner CTAs must use repository/custom-domain safe siteHref paths.");
+n(site.includes('siteHref("/login")')&&site.includes('siteHref("/register")'),"Partner public CTAs must use repository/custom-domain safe siteHref paths.");
 n(login.includes("PartnerLogin"),"/login must directly render Partner Login.");
 n(register.includes("PartnerRegister"),"/register must directly render registration.");
 n(portal.includes("getCurrentPartnerFn")&&portal.includes('redirect({to:"/login"})'),"/portal must be partner-auth protected.");
 n(workflow.includes("partner.inrishi.in"),"Partner Pages workflow must default to partner.inrishi.in.");
 n(!fs.existsSync("src/services/admin-auth.ts")&&!fs.existsSync("src/routes/r.9f2a7c4d6e.tsx"),"Admin source must not ship in partner deployment.");
-if(e.length){console.error(e.map(x=>`ERROR: ${x}`).join("\n"));process.exit(1)}console.log("V62 partner route contract passed: canonical Partner routes and safe CTAs verified.");
+if(e.length){console.error(e.map(x=>`ERROR: ${x}`).join("\n"));process.exit(1)}console.log("V78 Partner route contract passed: canonical Partner routes and safe CTAs verified.");

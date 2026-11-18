@@ -1,4 +1,4 @@
-name: Deploy INRISHI Partner V76 Production
+name: Deploy INRISHI Partner V78 Production
 
 on:
   push:
@@ -67,9 +67,9 @@ jobs:
           ok=0
           for attempt in 1 2 3 4 5 6; do
             if body=$(curl --fail --silent --show-error --location --max-time 20 "$URL"); then
-              if printf '%s' "$body" | grep -qi "Inrishi"; then ok=1; break; fi
+              if printf '%s' "$body" | grep -qi "Inrishi" && printf '%s' "$body" | grep -q "GTM-NH8FPTZF"; then ok=1; break; fi
             fi
             sleep 5
           done
-          test "$ok" -eq 1 || { echo "Production smoke test failed: deployed page did not return INRISHI HTML."; exit 1; }
+          test "$ok" -eq 1 || { echo "Production smoke test failed: deployed page did not return INRISHI HTML with the expected GTM container."; exit 1; }
           echo "Production smoke test passed."

@@ -6,4 +6,4 @@ need(home.includes('Become a Partner')&&home.includes('Partner Login'),'Partner 
 need(html.toLowerCase().includes('partner'),'Partner index metadata missing.');
 need(sitemap.includes('partner.inrishi.in'),'Partner sitemap domain missing.');
 if(e.length){console.error(e.map(x=>`ERROR: ${x}`).join('\n'));process.exit(1)}
-console.log('V76 Partner SEO gate passed: current referral proposition, products and conversion CTAs are present without public commercial disclosure.');
+console.log('V78 Partner SEO gate passed: current referral proposition, products and conversion CTAs are present without public commercial disclosure.');

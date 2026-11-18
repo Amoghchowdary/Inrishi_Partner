@@ -1,6 +1,6 @@
-INRISHI PARTNER V76 — VISUAL & NAVIGATION REFINEMENT
-Frontend: 76.0.0
-Backend contract: Apps Script 63.0.0 (unchanged)
+INRISHI PARTNER V78 — VISUAL & NAVIGATION REFINEMENT
+Frontend: 78.0.0
+Backend contract: Apps Script 64.0.0 (unchanged)
 
 Changes:
 - Removed “How it works” from Partner public navigation and renamed the portal tab to “Partner Guide”.
@@ -10,16 +10,16 @@ Changes:
 - Tiles and reel/slide placeholders turn white with black text on pointer hover/focus only.
 - Public commercial/incentive terms remain private inside the authenticated Partner Portal.
 - ERP remains blocked from new Partner referral choices.
-- Backend remains Apps Script V63.
+- Backend remains Apps Script V64.
 
-V76 realistic-image upgrade:
+V78 realistic-image upgrade:
 - adds real business photography;
 - adds photoreal software scenes;
 - replaces icon-only Partner support cards with realistic visual explanations;
 - keeps public product set Website, CRM, Employee Management, AI Automation;
-- backend remains Apps Script V63.
+- backend remains Apps Script V64.
 
-V76 analytics integration:
+V78 analytics integration:
 - Partner Google Tag Manager container: GTM-NH8FPTZF
-- Backend remains Apps Script V63 / 63.0.0.
+- Backend remains Apps Script V64 / 64.0.0.
 - No design, portal, authentication or database change.

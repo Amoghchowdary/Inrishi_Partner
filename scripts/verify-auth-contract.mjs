@@ -4,4 +4,4 @@ for(const action of ["auth.partner.begin","auth.partner.verifyOtp","auth.partner
 for(const marker of ["OTP","firstPassword","temporary password","changePartnerPasswordFn","Forgot password","Forgot Login ID"])if(!login.includes(marker))errors.push(`Partner login/activation marker missing: ${marker}`);
 if(register.includes('type="password"')||register.includes("Password"))errors.push("Partner application must not create a password before Admin approval.");
 for(const marker of ["approval","Login ID","temporary password","referral code","approved services"])if(!register.toLowerCase().includes(marker.toLowerCase()))errors.push(`Partner approval explanation missing: ${marker}`);
-if(errors.length){console.error(errors.map(e=>`ERROR: ${e}`).join("\n"));process.exit(1)}console.log("V62 Partner auth contract passed: approval-first credentials, temporary password, mandatory OTP and recovery are locked.");
+if(errors.length){console.error(errors.map(e=>`ERROR: ${e}`).join("\n"));process.exit(1)}console.log("V78 Partner auth contract passed: approval-first credentials, temporary password, mandatory OTP and recovery are locked.");

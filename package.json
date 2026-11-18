@@ -1,7 +1,7 @@
 {
-  "name": "inrishi-partner-v76-production",
+  "name": "inrishi-partner-v78-production",
   "private": true,
-  "version": "76.0.0",
+  "version": "78.0.0",
   "type": "module",
   "scripts": {
     "check:config": "node scripts/check-config.mjs",
@@ -21,7 +21,7 @@
     "verify:dist": "node scripts/verify-dist.mjs",
     "verify:release": "node scripts/verify-release.mjs",
     "prepare:pages": "node scripts/prepare-pages.mjs",
-    "preflight": "npm run check:config && npm run verify:gtm && npm run verify:dependencies && npm run verify:css-deps && npm run verify:design && npm run verify:form-event-types && npm run verify:compile-guards && npm run verify:architecture && npm run verify:pages && npm run verify:navigation && npm run verify:route-recovery && npm run verify:backend-bridge && npm run verify:transport && npm run verify:runtime-exports && npm run verify:auth-contract && npm run verify:portal-workflows && npm run verify:identity-permissions && npm run verify:services-incentives && npm run verify:chat-e2ee && npm run verify:seo && npm run verify:action-contract && npm run verify:v76-story && npm run verify:v76-integration && npm run verify:v76-regressions && npm run typecheck && npm run audit:all && npm run audit:prod && npm run verify && npm run verify:ui && npm run build && npm run verify:dist && npm run verify:artifact-v76 && npm run verify:release",
+    "preflight": "npm run check:config && npm run verify:gtm && npm run verify:dependencies && npm run verify:css-deps && npm run verify:design && npm run verify:form-event-types && npm run verify:compile-guards && npm run verify:architecture && npm run verify:pages && npm run verify:navigation && npm run verify:route-recovery && npm run verify:backend-bridge && npm run verify:transport && npm run verify:runtime-exports && npm run verify:auth-contract && npm run verify:portal-workflows && npm run verify:identity-permissions && npm run verify:services-incentives && npm run verify:chat-e2ee && npm run verify:seo && npm run verify:action-contract && npm run verify:v78-story && npm run verify:v78-integration && npm run verify:v78-regressions && npm run verify:v78-reliability && npm run verify:performance && npm run typecheck && npm run audit:all && npm run audit:prod && npm run verify && npm run verify:ui && npm run build && npm run verify:dist && npm run verify:artifact-v78 && npm run verify:release",
     "verify:pages": "node scripts/verify-pages-deployment.mjs",
     "verify:navigation": "node scripts/verify-navigation.mjs",
     "verify:backend-bridge": "node scripts/verify-backend-bridge.mjs",
@@ -35,11 +35,13 @@
     "verify:chat-e2ee": "node scripts/verify-chat-e2ee.mjs",
     "verify:seo": "node scripts/verify-seo.mjs",
     "verify:form-event-types": "node scripts/verify-form-event-types.mjs",
-    "verify:v76-story": "node scripts/verify-v76-story.mjs",
-    "verify:v76-integration": "node scripts/verify-v76-integration.mjs",
-    "verify:v76-regressions": "node scripts/verify-v76-regressions.mjs",
-    "verify:artifact-v76": "node scripts/verify-production-artifact-v76.mjs",
-    "verify:gtm": "node scripts/verify-gtm.mjs"
+    "verify:v78-story": "node scripts/verify-v78-story.mjs",
+    "verify:v78-integration": "node scripts/verify-v78-integration.mjs",
+    "verify:v78-regressions": "node scripts/verify-v78-regressions.mjs",
+    "verify:artifact-v78": "node scripts/verify-production-artifact-v78.mjs",
+    "verify:gtm": "node scripts/verify-gtm.mjs",
+    "verify:performance": "node scripts/verify-performance-v78.mjs",
+    "verify:v78-reliability": "node scripts/verify-v78-reliability.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "1.1.15",

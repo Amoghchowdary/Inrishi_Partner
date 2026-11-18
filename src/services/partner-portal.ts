@@ -6,4 +6,4 @@ export type PartnerLeadInput={customerName:string;company:string;phone:string;em
 export const getPartnerPortalSnapshotFn=()=>appsScriptCall<PartnerPortalSnapshot>("partner.portal.snapshot",{},{role:"partner"});
 export const createPartnerLeadFn=(data:PartnerLeadInput)=>appsScriptCall<{ok:boolean;leadId:string}>("partner.lead.create",data,{role:"partner"});
 export const recordPartnerPaymentFn=(leadId:string,amount:number,reference:string)=>appsScriptCall<{ok:boolean;requiredAdvance:number;qualifyingPaymentPercent?:number;totalPaid?:number;eligibleIncentive?:number;totalIncentive?:number}>("partner.recordAdvance",{leadId,amount,reference},{role:"partner"});
-export const convertPartnerLeadFn=(leadId:string)=>appsScriptCall<{ok:boolean;customerId:string;projectId:string;incentiveId?:string;incentiveStatus?:string}>("partner.convertLead",{leadId},{role:"partner"});
+export const convertPartnerLeadFn=(leadId:string)=>appsScriptCall<{ok:boolean;customerId:string;projectId:string;emailSent?:boolean;emailError?:string;incentiveId?:string;incentiveStatus?:string}>("partner.convertLead",{leadId},{role:"partner"});

@@ -23,4 +23,4 @@ for(const file of files){
   });
 }
 if(errors.length){console.error(errors.map(e=>`ERROR: ${e}`).join("\n"));process.exit(1)}
-console.log("V62 form-event typing gate passed: every currentTarget.elements access is backed by FormEvent<HTMLFormElement>.");
+console.log("V78 form-event typing gate passed: every currentTarget.elements access is backed by FormEvent<HTMLFormElement>.");

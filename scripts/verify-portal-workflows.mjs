@@ -6,4 +6,4 @@ need(portal.includes('filter(s=>s.name!=="ERP")'),'ERP must remain blocked from 
 need(chat.includes('Inrishi Admin'),'Partner Admin chat identity missing.');
 need(!chat.includes('This action is not available on the Partner site.'),'Old Partner-chat rejection copy remains.');
 if(e.length){console.error(e.map(x=>`ERROR: ${x}`).join('\n'));process.exit(1)}
-console.log('V76 Partner workflow gate passed: referral, private earnings and Admin-chat journeys are present.');
+console.log('V78 Partner workflow gate passed: referral, private earnings and Admin-chat journeys are present.');

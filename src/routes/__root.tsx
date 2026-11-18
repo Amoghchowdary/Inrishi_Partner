@@ -2,7 +2,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HeadContent, Link, Outlet, createRootRouteWithContext, useRouter, useRouterState } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { CosmicEnvironment } from "@/components/cosmic-environment";
-import inrishiLogo from "@/assets/inrishi-public-logo.png";
+import inrishiLogo from "@/assets/inrishi-public-logo.webp";
 
 import { siteHref } from "@/lib/site-path";
 import { getRuntimeConfig } from "@/lib/runtime-config";

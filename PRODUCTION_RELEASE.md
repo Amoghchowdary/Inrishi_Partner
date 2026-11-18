@@ -1,13 +1,12 @@
-# INRISHI Partner V76 Production Release
+# INRISHI Partner V78 Production Release
 
-V76 is a public Partner-site design and visual-content refinement release. Partner authentication, portal data, incentives and Admin chat continue to use Apps Script V63.
+Frontend: **78.0.0**  
+Required backend: **Apps Script 64.0.0 / 74 actions**  
+Production domain: **https://partner.inrishi.in**  
+GTM: **GTM-NH8FPTZF**
 
-Production requirements:
-- frontend 76.0.0;
-- backend contract 63.0.0;
-- partner.inrishi.in custom domain;
-- GitHub Actions live-backend gate before build/deploy;
-- no local-development step in production workflow.
+V78 focuses on Partner Portal speed, easier navigation, resilient historical data handling and complete onboarding/legal delivery. Local production legal pages are included for Privacy Policy, Terms of Use and Partner Terms.
 
-## V76 analytics
-Google Tag Manager is connected using `GTM-NH8FPTZF` on the Partner site. The release gate verifies the container ID before production build/deployment.
+The GitHub Actions workflow verifies the deployed Apps Script backend before build/deploy, then runs the complete repository preflight and production smoke test.
+
+Apps Script V64 must be deployed first on the existing Web App URL.
