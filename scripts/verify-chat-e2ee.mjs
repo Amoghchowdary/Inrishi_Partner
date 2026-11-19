@@ -4,4 +4,4 @@ for(const marker of ["RSA-OAEP","AES-GCM","crypto.subtle.generateKey","wrappedKe
 for(const a of ["chat.device.register","chat.context","chat.messages.list","chat.message.send","chat.attachment.upload","chat.attachment.get"])if(!contract.actions.includes(a))errors.push(`Chat backend action missing: ${a}`);
 if(!ui.includes("attachment")&&!ui.includes("Attachment"))errors.push("Chat attachment UI missing.");
 if(!portal.includes('<SecureChat role="partner"/>'))errors.push("Partner chat surface missing.");
-if(errors.length){console.error(errors.map(e=>`ERROR: ${e}`).join("\n"));process.exit(1)}console.log("V78 Partner encrypted-chat gate passed: browser-side AES-GCM/RSA-OAEP encryption, attachment encryption and Partner chat are present.");
+if(errors.length){console.error(errors.map(e=>`ERROR: ${e}`).join("\n"));process.exit(1)}console.log("V81 Partner encrypted-chat gate passed: browser-side AES-GCM/RSA-OAEP encryption, attachment encryption and Partner chat are present.");

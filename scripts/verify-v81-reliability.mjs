@@ -13,4 +13,4 @@ need(register.includes('acknowledgementSent'),'Partner application acknowledgeme
 for(const f of ['public/privacy.html','public/terms.html','public/partner-terms.html'])need(fs.existsSync(f),`Missing legal production file: ${f}`);
 for(const href of ['/privacy.html','/terms.html','/partner-terms.html'])need(register.includes(href)||home.includes(href),`Local legal link missing: ${href}`);
 if(e.length){console.error(e.map(x=>`ERROR: ${x}`).join('\n'));process.exit(1)}
-console.log('V78 Partner reliability gate passed: cached navigation, safe legacy records, acknowledgement flow, customer-login warnings and local legal documents are locked.');
+console.log('V81 Partner reliability gate passed: cached navigation, safe legacy records, acknowledgement flow, customer-login warnings and local legal documents are locked.');

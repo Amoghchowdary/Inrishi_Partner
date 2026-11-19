@@ -1,9 +1,12 @@
-import fs from 'node:fs';
-const e=[];const need=(ok,msg)=>{if(!ok)e.push(msg)};const home=fs.readFileSync('src/components/partner/partner-home.tsx','utf8'),html=fs.readFileSync('index.html','utf8'),sitemap=fs.readFileSync('public/sitemap.xml','utf8');
-for(const m of ['Refer the problem. We build the solution.','WHAT TO REFER','Business Website','CRM','Employee Management','AI Automation'])need(home.includes(m),`Partner acquisition marker missing: ${m}`);
-need(!home.includes('name:"ERP"')&&!home.includes('₹5,000'),'Partner public acquisition surface contains removed product/commercial content.');
-need(home.includes('Become a Partner')&&home.includes('Partner Login'),'Partner conversion CTAs missing.');
-need(html.toLowerCase().includes('partner'),'Partner index metadata missing.');
-need(sitemap.includes('partner.inrishi.in'),'Partner sitemap domain missing.');
-if(e.length){console.error(e.map(x=>`ERROR: ${x}`).join('\n'));process.exit(1)}
-console.log('V78 Partner SEO gate passed: current referral proposition, products and conversion CTAs are present without public commercial disclosure.');
+import fs from "node:fs";
+const errors=[];const need=(ok,msg)=>{if(!ok)errors.push(msg)};const read=f=>fs.readFileSync(f,"utf8");
+const html=read("index.html"),robots=read("public/robots.txt"),sitemap=read("public/sitemap.xml"),prep=read("scripts/prepare-pages.mjs"),llms=read("public/llms.txt"),home=read("src/components/partner/partner-home.tsx");
+need(html.includes("GTM-NH8FPTZF"),"Partner GTM missing");
+need(robots.includes("OAI-SearchBot"),"Partner OAI-SearchBot crawl support missing");
+for(const p of ["/login","/register","/portal"])need(robots.includes(p),`Private route not blocked in robots: ${p}`);
+need(sitemap.includes("https://partner.inrishi.in/")&&!sitemap.includes("/login"),"Partner sitemap is not focused on public home");
+need(prep.includes("noindex,nofollow,noarchive"),"Authenticated partner routes lack noindex output");
+need(prep.includes("INRISHI PRIVATE LIMITED")&&prep.includes("seo-prerender"),"Partner crawlable entity content missing");
+need(llms.includes("commercial incentive details remain private")||llms.includes("Commercial incentive details remain private"),"Partner AI summary privacy boundary missing");
+need(home.includes("INRISHI")||home.includes("Inrishi"),"Partner public brand signal missing");
+if(errors.length){console.error(errors.map(x=>`ERROR: ${x}`).join("\n"));process.exit(1)}console.log("V81 Partner SEO/AEO gate passed.");

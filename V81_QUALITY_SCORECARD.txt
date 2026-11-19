@@ -1,7 +1,7 @@
-INRISHI Partner V78 - Production Quality Scorecard
+INRISHI Partner V81 - Production Quality Scorecard
 
 Target: 10/10 release discipline
-Frontend: 78.0.0
+Frontend: 81.0.0
 Backend contract: 64.0.0
 
 Gates:
@@ -17,4 +17,4 @@ Gates:
 - Portal/auth/chat regression checks
 - GitHub Pages production artifact verification
 
-V78 is a consolidation release: no backend contract change.
+V81 is a consolidation release: no backend contract change.

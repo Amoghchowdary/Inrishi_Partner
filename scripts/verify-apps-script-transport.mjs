@@ -13,7 +13,7 @@ for(const token of [
   if(!source.includes(token))errors.push(`Missing V64 form-post transport requirement: ${token}`);
 }
 for(const forbidden of ["ensureRpcBridge","INRISHI_APPS_SCRIPT_BRIDGE","google.script.run"]){
-  if(source.includes(forbidden))errors.push(`Broken persistent RPC bridge must not remain in V78 frontend: ${forbidden}`);
+  if(source.includes(forbidden))errors.push(`Broken persistent RPC bridge must not remain in V81 frontend: ${forbidden}`);
 }
 if(errors.length){console.error(errors.map(e=>`ERROR: ${e}`).join("\n"));process.exit(1)}
-console.log("V78/V64 Apps Script transport verified: per-request POST/HtmlService response channel with dynamic Google sandbox origin trust.");
+console.log("V81/V64 Apps Script transport verified: per-request POST/HtmlService response channel with dynamic Google sandbox origin trust.");

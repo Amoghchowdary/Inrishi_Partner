@@ -3,4 +3,11 @@ Allow: /
 Disallow: /login
 Disallow: /register
 Disallow: /portal
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /login
+Disallow: /register
+Disallow: /portal
+
 Sitemap: https://partner.inrishi.in/sitemap.xml

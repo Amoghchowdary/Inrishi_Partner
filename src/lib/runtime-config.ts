@@ -7,7 +7,7 @@ export type InrishiRuntimeConfig = {
   PARTNER_ORIGIN: string;
   MAX_UPLOAD_MB: number;
   PORTALS: {
-    main: { home:string; customerLogin:string; customerPortal:string; partnerNetwork:string; partnerLogin:string; partnerRegister:string; partnerPortal:string; adminEntry:string; hiddenAdminEntry:string };
+    main: { home:string; customerLogin:string; customerPortal:string; partnerNetwork:string; partnerLogin:string; partnerRegister:string; partnerPortal:string; adminEntry:string };
     partner: { home:string; login:string; register:string; portal:string };
   };
 };
@@ -16,7 +16,7 @@ type RuntimeOverride = Omit<Partial<InrishiRuntimeConfig>, "PORTALS"> & { PORTAL
 declare global { interface Window { INRISHI_CONFIG?: RuntimeOverride; } }
 
 const defaults: InrishiRuntimeConfig = {
-  APP_VERSION: "78.0.0",
+  APP_VERSION: "81.0.0",
   ENVIRONMENT: "production",
   SITE_ID: "partner",
   APPS_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbzQ1YMIghWp_p3hy3NxsJraffY_AjLA77JlyfYF7YvkGlylLnV2MiDgJViLjByn9ntq/exec",
@@ -27,7 +27,7 @@ const defaults: InrishiRuntimeConfig = {
     main: {
       home: "https://www.inrishi.in/", customerLogin: "https://www.inrishi.in/customer-login", customerPortal: "https://www.inrishi.in/customer-portal",
       partnerNetwork: "https://partner.inrishi.in/", partnerLogin: "https://partner.inrishi.in/login", partnerRegister: "https://partner.inrishi.in/register", partnerPortal: "https://partner.inrishi.in/portal",
-      adminEntry: "https://www.inrishi.in/admin", hiddenAdminEntry: "https://www.inrishi.in/r/9f2a7c4d6e"
+      adminEntry: "https://www.inrishi.in/admin"
     },
     partner: { home: "/", login: "/login", register: "/register", portal: "/portal" }
   }

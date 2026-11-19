@@ -1,0 +1,10 @@
+INRISHI PARTNER V81 — SEARCH / AI DISCOVERY RELEASE
+
+Frontend: 81.0.0
+Backend contract: 64.0.0
+Partner GTM: GTM-NH8FPTZF
+
+- Public Partner homepage remains indexable and tied clearly to INRISHI PRIVATE LIMITED.
+- /login, /register and /portal remain noindex/nofollow/noarchive.
+- OAI-SearchBot may crawl the public Partner page but not private workspace routes.
+- llms.txt provides a supplemental public summary while keeping commercial incentive details private.

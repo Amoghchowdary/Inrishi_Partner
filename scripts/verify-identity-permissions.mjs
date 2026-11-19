@@ -4,4 +4,4 @@ for(const action of ["auth.partner.begin","auth.partner.verifyOtp","auth.partner
 if(!login.includes("firstPassword")||!login.includes("changePartnerPasswordFn"))errors.push("First-login temporary-password replacement is missing.");
 if(!login.includes("OTP"))errors.push("Mandatory Partner login OTP is missing.");
 if(register.includes('type="password"'))errors.push("Application form must not capture a permanent password before approval.");
-if(errors.length){console.error(errors.map(e=>`ERROR: ${e}`).join("\n"));process.exit(1)}console.log("V78 Partner identity gate passed: approval-first account provisioning and mandatory OTP are enforced.");
+if(errors.length){console.error(errors.map(e=>`ERROR: ${e}`).join("\n"));process.exit(1)}console.log("V81 Partner identity gate passed: approval-first account provisioning and mandatory OTP are enforced.");

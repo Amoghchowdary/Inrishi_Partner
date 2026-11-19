@@ -1,5 +1,5 @@
-INRISHI Partner V78 RELIABILITY RELEASE
-Frontend: 78.0.0
+INRISHI Partner V81 RELIABILITY RELEASE
+Frontend: 81.0.0
 Backend contract: 64.0.0
 
 Fixes:
@@ -11,4 +11,4 @@ Fixes:
 - Partner approval email includes brochure + Partner Terms + Privacy + Terms of Use.
 - Customer credential resend/recovery action for Admin.
 - Partner legal pages deployed locally on partner.inrishi.in.
-- GTM and performance optimizations preserved and verified in V78.
+- GTM and performance optimizations preserved and verified in V81.

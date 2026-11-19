@@ -3,7 +3,7 @@ import path from "node:path";
 const root=process.cwd();
 const fail=(m)=>{console.error(`PERFORMANCE FAIL: ${m}`);process.exit(1)};
 const pkg=JSON.parse(fs.readFileSync(path.join(root,"package.json"),"utf8"));
-if(pkg.version!=="78.0.0") fail(`expected 78.0.0, got ${pkg.version}`);
+if(pkg.version!=="81.0.0") fail(`expected 81.0.0, got ${pkg.version}`);
 const walk=(dir)=>fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>{const p=path.join(dir,e.name);return e.isDirectory()?walk(p):[p]});
 const assets=walk(path.join(root,"src","assets"));
 for(const f of assets){const size=fs.statSync(f).size;if(/\.(png|jpe?g|webp)$/i.test(f)&&size>2100000) fail(`oversized source raster ${path.relative(root,f)} ${(size/1048576).toFixed(2)}MB`)}
@@ -14,4 +14,4 @@ if(!sources.includes("content-visibility:auto")) fail("content-visibility optimi
 const html=fs.readFileSync(path.join(root,"index.html"),"utf8");
 if(!html.includes("googletagmanager.com")) fail("GTM resource missing");
 if(!html.includes('rel="preconnect" href="https://www.googletagmanager.com"')) fail("GTM preconnect missing");
-console.log("V78 performance gate passed");
+console.log("V81 performance gate passed");

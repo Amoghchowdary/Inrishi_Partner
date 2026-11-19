@@ -1,5 +1,5 @@
-INRISHI PARTNER V78 — VISUAL & NAVIGATION REFINEMENT
-Frontend: 78.0.0
+INRISHI PARTNER V81 — VISUAL & NAVIGATION REFINEMENT
+Frontend: 81.0.0
 Backend contract: Apps Script 64.0.0 (unchanged)
 
 Changes:
@@ -12,14 +12,14 @@ Changes:
 - ERP remains blocked from new Partner referral choices.
 - Backend remains Apps Script V64.
 
-V78 realistic-image upgrade:
+V81 realistic-image upgrade:
 - adds real business photography;
 - adds photoreal software scenes;
 - replaces icon-only Partner support cards with realistic visual explanations;
 - keeps public product set Website, CRM, Employee Management, AI Automation;
 - backend remains Apps Script V64.
 
-V78 analytics integration:
+V81 analytics integration:
 - Partner Google Tag Manager container: GTM-NH8FPTZF
 - Backend remains Apps Script V64 / 64.0.0.
 - No design, portal, authentication or database change.

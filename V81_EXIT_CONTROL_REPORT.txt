@@ -1,0 +1,30 @@
+INRISHI PARTNER V81 - EXIT CONTROL REPORT
+Date: 2026-11-19
+
+Frontend version: 81.0.0
+Backend contract: 64.0.0
+GTM: GTM-NH8FPTZF
+
+RESULTS
+- Source verification gates: 31/31 PASS
+- MJS syntax: PASS
+- TS/TSX syntax transpilation: 27 files PASS
+- JSON parse validation: PASS
+- Strict route whitelist: PASS
+- Terminal custom 404 / no SPA recovery: PASS
+- Direct /login, /register, /portal static entry generation: PASS
+- Current referral product whitelist: PASS
+- Public Partner SEO/AEO layer preserved: PASS
+- Private routes remain noindex: PASS
+- Backend V64 integration contract preserved: PASS
+- GTM preserved: PASS
+- GitHub Actions clean-dist and post-deploy hard-404 smoke test: PRESENT
+
+CURRENT REFERRABLE SERVICES
+Website Design
+CRM
+Employee Management
+AI Business Transformation
+
+NOTE
+Full dependency install/build/audit remains enforced by GitHub Actions at deployment time.

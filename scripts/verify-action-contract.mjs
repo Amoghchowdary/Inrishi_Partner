@@ -7,4 +7,4 @@ for(const a of used)if(!allowed.has(a))errors.push(`Frontend action is absent fr
 if(contract.version!=="64.0.0")errors.push("Backend contract must be V64.");
 if(contract.transport!=="apps-script-form-post")errors.push("Backend contract must use the V64 form-post transport.");
 if(errors.length){console.error(errors.map(e=>`ERROR: ${e}`).join("\n"));process.exit(1)}
-console.log(`V78 frontend/V64 backend action contract passed: ${used.size} frontend action(s) covered by ${allowed.size} backend action(s).`);
+console.log(`V81 frontend/V64 backend action contract passed: ${used.size} frontend action(s) covered by ${allowed.size} backend action(s).`);

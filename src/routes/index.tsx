@@ -1,3 +1,3 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PartnerWebsite } from "@/components/partner/partner-home";
-export const Route=createFileRoute("/")({head:()=>({meta:[{title:"Become an Inrishi Partner | Inrishi"},{name:"description",content:"Join the Inrishi Partner Network, register, sign in and understand products, submit opportunities and manage private partner activity."}]}),component:PartnerWebsite});
+export const Route=createFileRoute("/")({head:()=>({meta:[{title:"INRISHI Partner Network | Business Referral Program India"},{name:"description",content:"Join the INRISHI Partner Network to refer genuine business requirements for AI automation, CRM, employee management and business websites with private portal tracking."}]}),component:PartnerWebsite});

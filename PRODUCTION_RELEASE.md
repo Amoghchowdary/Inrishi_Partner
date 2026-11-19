@@ -1,12 +1,16 @@
-# INRISHI Partner V78 Production Release
+# INRISHI Partner V81 Production Release
 
-Frontend: **78.0.0**  
-Required backend: **Apps Script 64.0.0 / 74 actions**  
-Production domain: **https://partner.inrishi.in**  
-GTM: **GTM-NH8FPTZF**
+V81 is the single-production Partner refinish. It removes legacy route recovery, preserves the V80 public SEO/AEO layer, keeps only the canonical Partner routes, and adds a terminal custom 404 for every non-whitelisted URL.
 
-V78 focuses on Partner Portal speed, easier navigation, resilient historical data handling and complete onboarding/legal delivery. Local production legal pages are included for Privacy Policy, Terms of Use and Partner Terms.
+## Production topology
+- Partner home: https://partner.inrishi.in/
+- Login: /login
+- Register: /register
+- Portal: /portal
+- Backend: Apps Script V64 / contract 64.0.0
 
-The GitHub Actions workflow verifies the deployed Apps Script backend before build/deploy, then runs the complete repository preflight and production smoke test.
-
-Apps Script V64 must be deployed first on the existing Web App URL.
+## V81 controls
+- Unknown URLs return a custom hard 404.
+- /login, /register and /portal remain direct-entry compatible and noindex.
+- Current referral choices are limited to Website Design, CRM, Employee Management and AI Business Transformation.
+- GitHub Actions rebuilds from a clean dist and verifies HTTP 404 behavior after deployment.
